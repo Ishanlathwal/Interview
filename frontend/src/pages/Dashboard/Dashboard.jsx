@@ -102,7 +102,11 @@ const Dashboard = () => {
               </tbody>
             </table>
           ) : (
-            <p className="text-gray-500">No expenses found.</p>
+            <div className="flex justify-center items-center h-40">
+              <p className="text-gray-500 font-semibold text-center">
+                No expenses found please add an expense.
+              </p>
+            </div>
           )}
         </div>
 
@@ -110,24 +114,32 @@ const Dashboard = () => {
           <h2 className="text-lg font-semibold px-6 py-4 border-b">
             Category wise spending
           </h2>
-          <table className="min-w-full text-sm text-gray-700">
-            <thead className="bg-gray-100 text-xs uppercase text-gray-600">
-              <tr>
-                <th className="px-6 py-3 text-left">#</th>
-                <th className="px-6 py-3 text-left">Category</th>
-                <th className="px-6 py-3 text-left">Amount</th>
-              </tr>
-            </thead>
-            <tbody>
-              {categoryWiseSpending.map((item, index) => (
-                <tr key={item.name} className="border-t hover:bg-gray-50">
-                  <td className="px-6 py-4">{index + 1}</td>
-                  <td className="px-6 py-4">{item.category}</td>
-                  <td className="px-6 py-4">{item.total}</td>
+          {categoryWiseSpending.length > 0 ? (
+            <table className="min-w-full text-sm text-gray-700">
+              <thead className="bg-gray-100 text-xs uppercase text-gray-600">
+                <tr>
+                  <th className="px-6 py-3 text-left">#</th>
+                  <th className="px-6 py-3 text-left">Category</th>
+                  <th className="px-6 py-3 text-left">Amount</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {categoryWiseSpending.map((item, index) => (
+                  <tr key={item.name} className="border-t hover:bg-gray-50">
+                    <td className="px-6 py-4">{index + 1}</td>
+                    <td className="px-6 py-4">{item.category}</td>
+                    <td className="px-6 py-4">{item.total}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <div className="flex justify-center items-center h-40">
+              <p className="text-gray-500 font-semibold text-center">
+                No expenses found please add an expense.
+              </p>
+            </div>
+          )}
         </div>
         <div className="flex-1 min-w-[320px] rounded-lg shadow border bg-white">
           <SpendingPieChart data={categoryWiseSpending} />
