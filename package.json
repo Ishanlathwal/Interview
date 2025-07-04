@@ -5,6 +5,8 @@
   "type": "commonjs",
   "scripts": {
     "start": "node backend/server.js",
+    "backend": "npm install && nodemon backend/server.js",
+    "frontend": "npm install --prefix frontend && cd frontend && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon backend/server.js",
     "start-server": "cd backend && node server.js",
