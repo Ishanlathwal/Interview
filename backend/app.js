@@ -24,6 +24,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://interview-fjkj.onrender.com",
   "http://localhost:3000",
+  "http://localhost:3000/api/v1",
 ];
 app.use(
   cors({

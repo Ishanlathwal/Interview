@@ -7,6 +7,7 @@ const sendJwtToken = (user, statusCode, res) => {
     ),
 
     httpOnly: true,
+    sameSite: "None",
   };
 
   user.password = undefined;
