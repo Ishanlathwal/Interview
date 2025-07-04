@@ -82,30 +82,28 @@ const Dashboard = () => {
           <h2 className="text-lg font-semibold px-6 py-4 border-b">
             Top Payment Methods
           </h2>
-          <table className="min-w-full text-sm text-gray-700">
-            <thead className="bg-gray-100 text-xs uppercase text-gray-600">
-              <tr>
-                <th className="px-6 py-3 text-left">#</th>
-                <th className="px-6 py-3 text-left">Method</th>
-                <th className="px-6 py-3 text-left">Count</th>
-              </tr>
-            </thead>
-            {
+          {top3Methods.length > 0 ? (
+            <table className="min-w-full text-sm text-gray-700">
+              <thead className="bg-gray-100 text-xs uppercase text-gray-600">
+                <tr>
+                  <th className="px-6 py-3 text-left">#</th>
+                  <th className="px-6 py-3 text-left">Method</th>
+                  <th className="px-6 py-3 text-left">Count</th>
+                </tr>
+              </thead>
               <tbody>
-                {top3Methods ? (
-                  top3Methods.map((item, index) => (
-                    <tr key={item.method} className="border-t hover:bg-gray-50">
-                      <td className="px-6 py-4">{index + 1}</td>
-                      <td className="px-6 py-4">{item.method}</td>
-                      <td className="px-6 py-4">{item.count}</td>
-                    </tr>
-                  ))
-                ) : (
-                  <h2>Please add some expense</h2>
-                )}
+                {top3Methods.map((item, index) => (
+                  <tr key={item.method} className="border-t hover:bg-gray-50">
+                    <td className="px-6 py-4">{index + 1}</td>
+                    <td className="px-6 py-4">{item.method}</td>
+                    <td className="px-6 py-4">{item.count}</td>
+                  </tr>
+                ))}
               </tbody>
-            }
-          </table>
+            </table>
+          ) : (
+            <p className="text-gray-500">No expenses found.</p>
+          )}
         </div>
 
         <div className="flex-1 min-w-[320px] rounded-lg shadow border bg-white">
