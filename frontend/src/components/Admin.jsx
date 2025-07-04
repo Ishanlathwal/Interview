@@ -1,10 +1,3 @@
-// import React from "react";
-
-// const Admin = () => {
-//   return <div>Admin</div>;
-// };
-
-// export default Admin;
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../baseUrl";
 
@@ -13,7 +6,6 @@ const Admin = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch expenses from API
   useEffect(() => {
     const fetchAdminData = async () => {
       try {

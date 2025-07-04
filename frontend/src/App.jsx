@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import LoginSignup from "./pages/Auth/LoginSignup.jsx";
 import {
   BrowserRouter as Router,
@@ -6,8 +6,6 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import Home from "./pages/Dashboard/Home.jsx";
-import Income from "./pages/Dashboard/Budget.jsx";
 import Expense from "./pages/Dashboard/Expense.jsx";
 import { useSelector } from "react-redux";
 import { RequireAuth, RequireAuthAdmin } from "./Authenticator.jsx";

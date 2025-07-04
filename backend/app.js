@@ -44,10 +44,6 @@ const userRoute = require("./Routes/userRoutes.js");
 
 app.use("/api/v1", userRoute);
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
-
 // To run both front end and backend using one server
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 

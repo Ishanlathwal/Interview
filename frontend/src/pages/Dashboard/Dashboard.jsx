@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../../baseUrl";
 import Loader from "../../components/Loader/Loader";
-import {
-  PieChart,
-  Pie,
-  Cell,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
-import SpendingPieChart from "../../components/layouts/Piechart";
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#845EC2"];
+import SpendingPieChart from "../../components/layouts/Piechart";
 
 const Dashboard = () => {
   const [expenses, setExpenses] = useState([]);

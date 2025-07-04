@@ -1,11 +1,3 @@
-// import React from "react";
-
-// const Budget = () => {
-//   return <div>Budget</div>;
-// };
-
-// export default Budget;
-
 import { useEffect, useState } from "react";
 import axiosInstance from "../../../baseUrl";
 import { FaTrashAlt } from "react-icons/fa";

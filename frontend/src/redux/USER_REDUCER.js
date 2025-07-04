@@ -58,7 +58,6 @@ export const userReducer = (state = { user: {} }, action) => {
       return state;
   }
 };
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -88,8 +87,6 @@ export const clearError = () => async (dispatch) => {
   dispatch({ type: "clear/error" });
 };
 
-/////////////////////////Sign up
-
 export const signUp = (userData) => async (dispatch) => {
   console.log("userdata", userData);
   try {
@@ -110,8 +107,6 @@ export const signUp = (userData) => async (dispatch) => {
   }
 };
 
-// Load User in begning
-
 export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: "loadUser/request" });
@@ -128,8 +123,6 @@ export const loadUser = () => async (dispatch) => {
     dispatch({ type: "clear/error" });
   }
 };
-
-//// Log out user
 
 export const logOut = () => async (dispatch) => {
   try {
