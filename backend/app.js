@@ -20,9 +20,14 @@ const app = express();
 app.set("query parser", "extended");
 
 // app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://interview-fjkj.onrender.com",
+  "http://localhost:3000",
+];
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: allowedOrigins,
     credentials: true,
   })
 );
