@@ -22,7 +22,7 @@ app.set("query parser", "extended");
 // app.use(cors());
 app.use(
   cors({
-    origin: "https://interview-fjkj.onrender.com",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
