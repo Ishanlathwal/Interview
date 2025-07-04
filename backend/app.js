@@ -18,6 +18,9 @@ process.on("uncaughtException", (err) => {
 
 const app = express();
 app.set("query parser", "extended");
+if (process.env.NODE_ENV === "production") {
+  app.set("trust proxy", 1);
+}
 
 // app.use(cors());
 const allowedOrigins = [
