@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import Navbar from "./Navbar.jsx";
-import Sidemenu from "./Sidemenu.jsx";
+import Sidemenu from "./SideMenu.jsx";
 
 const DashboardLayout = ({ children, activeMenu }) => {
   const { user } = useSelector((state) => state.user);
