@@ -90,15 +90,21 @@ const Dashboard = () => {
                 <th className="px-6 py-3 text-left">Count</th>
               </tr>
             </thead>
-            <tbody>
-              {top3Methods.map((item, index) => (
-                <tr key={item.method} className="border-t hover:bg-gray-50">
-                  <td className="px-6 py-4">{index + 1}</td>
-                  <td className="px-6 py-4">{item.method}</td>
-                  <td className="px-6 py-4">{item.count}</td>
-                </tr>
-              ))}
-            </tbody>
+            {
+              <tbody>
+                {top3Methods ? (
+                  top3Methods.map((item, index) => (
+                    <tr key={item.method} className="border-t hover:bg-gray-50">
+                      <td className="px-6 py-4">{index + 1}</td>
+                      <td className="px-6 py-4">{item.method}</td>
+                      <td className="px-6 py-4">{item.count}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <h2>Please add some expense</h2>
+                )}
+              </tbody>
+            }
           </table>
         </div>
 
